@@ -9,6 +9,7 @@ var _              = require('underscore'),
     url            = require('url'),
 /* shared mbc code */
     mbc            = require('mbc-common'),
+    avahi          = new mbc.avahi(),
     conf           = mbc.config.ConfigServer,
     common_conf    = mbc.config.Common,
     collections    = common_conf.Collections,
@@ -81,6 +82,8 @@ require('./routes')(app);
 
 var ios = iobackends.get_ios();
 var server = app.listen(app.get('port'), function(){
+    avahi.announce('Configuration server.', app.get('port'));
+
     logger.info("Express server");
     logger.info("listening on port: " + app.get('port'));
     logger.info("--------- in mode: " + app.settings.env);
