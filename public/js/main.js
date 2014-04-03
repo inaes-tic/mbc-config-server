@@ -4,20 +4,12 @@ window.appCollection = appCollection;
 var AppRouter = Backbone.Router.extend({
 
     routes: {
-        "editor"             : "editor",
-        "c"             : "c",
     },
 
     initialize: function () {
         window.socket = io.connect('http://' + window.location.hostname);
         this.headerView = new HeaderView({});
-    },
-
-    c: function() {
         return new ConfView({collection: appCollection});
-    },
-    editor: function() {
-        return new EditorView();
     },
 
     // Manually bind a single named route to a callback. For example:

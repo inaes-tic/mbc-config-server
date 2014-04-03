@@ -7,7 +7,7 @@ html(lang='#{lang}')
     meta(charset="utf-8")
     link(rel='stylesheet', href='/css/main.css')
     script(src='/lib/head.min.js')
-  body
+  body.folded
     script(type='text/javascript')
       head.js(
         "/js/vendor.js",
@@ -18,12 +18,9 @@ html(lang='#{lang}')
         "/js/templates.js",
         "/js/models.js",
         "/js/views.js",
-        "/js/main.js",
-        "/js/widgets/WebvfxSimpleWidget.js",
-        "/js/widgets/fonts/ShareRegular.js",
-        "/js/widgets/fonts/ShareBold.js"
+        "/js/main.js"
       );
     #Panel
 
-    #content
+    #content.trans
         block content

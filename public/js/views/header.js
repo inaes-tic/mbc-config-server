@@ -37,5 +37,6 @@ window.HeaderView = function (options) {
         $(window).resize();
     };
     $('#toggle-header').click(toggle);
+    self.toggle = toggle;
 }
 

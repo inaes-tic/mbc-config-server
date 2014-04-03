@@ -61,7 +61,6 @@ app.configure(function(){
         compress: true}
     ));
     app.use(express.static(conf.Dirs.pub, {maxAge: common_conf.Others.maxage}));
-    //app.use('/models', express.static(conf.Dirs.models, {maxAge: common_conf.Others.maxage}));
     app.use('/lib',    express.static(conf.Dirs.vendor, {maxAge: common_conf.Others.maxage}));
     app.use(app.router);
 });
